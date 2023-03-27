@@ -2,37 +2,41 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
-
+First, install all packages
 ```bash
-npm run dev
+ yarn
+```
+
+then, run the development server:
+
+Then
+```bash
 # or
 yarn dev
+# or
+npm run dev
 # or
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ Open [http://localhost:3000](http://localhost:3000) with Chrome, and go to Inspector -> Performance monitor  notice that cpu cost is around 15-17%( MBP 2023 16G )
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![image](public/3.60.beta-21.png)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+Switch to different branch(3.55.2)
+and reinstall the packages again , and run the server
+```bash
+ yarn
+ yarn dev
+```
+Monit the Performance monitor tab, and the cpu cost is around 5% - 8%
 
-To learn more about Next.js, take a look at the following resources:
+![image](public/3.55.2.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+I have no idea why this is happening. I have tested two different versions using React (Vite+React) and cannot distinguish much difference in performance. However, when I use Next.js, it occurs. Is this a problem with Next.js? Did I miss any core concept of Next.js?"
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
